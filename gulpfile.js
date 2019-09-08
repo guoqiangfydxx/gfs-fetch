@@ -18,13 +18,14 @@ var error = function(e){
     }
     process.exit(1);
 };
+// __dirname表示当前工作的目录
 gulp.task('karma', function (done) {
     new Server({
         configFile: __dirname + '/karma.conf.js',
         singleRun: true
     }, done).start();
 });
-
+// __filename表示正在执行的脚本的文件名
 gulp.task('open', function () {
     gulp.src(__filename)
         .pipe(open({uri: "http://"+(internalIP.v4() || '127.0.0.1')+":8081/index.html"}));

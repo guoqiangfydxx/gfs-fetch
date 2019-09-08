@@ -2,6 +2,7 @@
 import * as jqParam from 'jquery-param';
 //var jqParam = require('jquery-param');
 
+// ajax默认携带的参数
 export interface AjaxPropsInter{
     dataType?:string;
     asyn?:boolean;
@@ -72,6 +73,7 @@ export default class Request implements RequestInter{
         error:this.noc
     } ){
 
+        console.log('opts>>>>', opts)
         if(typeof(opts.dataType) =='undefined' ){
             opts.dataType = 'json';
         }

@@ -1,14 +1,15 @@
-import fetch, { Fetch } from '../../src/index';
+import fetch, { Fetch } from '../../src/index'
 
 // var fetch;
 // fetch = new Fetch();
-console.dir(fetch.run);
-var root = document.getElementById('root');
+console.dir(fetch.run)
+var root = document.getElementById('root')
 document.getElementById('getAjax').onclick = function() {
-    fetch.run('/mocks/ajax.json').then((data) => {
+    fetch.run('/mocks/ajax.json', {
+    }).then((data) => {
         root.innerHTML = data.message;
-    });
-};
+    })
+}
 
 document.getElementById('ajaxError').onclick = function() {
 
@@ -16,5 +17,5 @@ document.getElementById('ajaxError').onclick = function() {
 
     }, function(ex) {
         root.innerHTML = `<font color="red">${ex.responseText}</font>`;
-    });
-};
+    })
+}
